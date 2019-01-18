@@ -1,5 +1,8 @@
 <header>
-  <h1>Flickr Finder</h1>
+  <h1 *ngIf="iconsAvailable">
+    <mat-icon svgIcon="brand:FLICKR"></mat-icon>
+    <span>Flickr Finder</span>
+  </h1>
 </header>
 <aside>
   <!-- side nav -->

@@ -1,3 +1,5 @@
+@import '_constants';
+
 :host {
   display: block;
   padding: 1rem;
@@ -10,6 +12,7 @@ ul {
 li {
   align-items: center;
   display: flex;
+  font-family: $body-font-face;
   list-style: none;
   margin-bottom: 1rem;
 }

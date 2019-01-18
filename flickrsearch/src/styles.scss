@@ -1,10 +1,13 @@
-/* Loads the theme for Material components. This would be customised with more time */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* Loads any fonts utilised by the UI */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto:300');
 
+
+/* Common properties */
 @import '_constants';
+
+/* Custom Material theme */
+@import '_material-theme';
 
 /* Basic layout. This could be a full CSS reset in a full version */
 body {

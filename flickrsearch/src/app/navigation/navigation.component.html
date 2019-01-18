@@ -1,18 +1,15 @@
 <ul class="menu" *ngIf="iconsAvailable">
-  <li>
-    <mat-icon svgIcon="navigation:SEARCH"></mat-icon>
-    <span>Search by keyword</span>
-  </li>
-  <li>
-    <mat-icon svgIcon="navigation:TWITTER"></mat-icon>
-    <span>Trending Twitter tags</span>
-  </li>
-  <li>
-    <mat-icon svgIcon="navigation:WEATHER"></mat-icon>
-    <span>Weather conditions</span>
-  </li>
-  <li>
-    <mat-icon svgIcon="navigation:NEWS"></mat-icon>
-    <span>News headline keywords</span>
+  <li
+    *ngFor="let item of navigationItemList"
+    (click)="navigateTo(item.ref)"
+    [class.active]="item.active">
+    <ng-container
+      *ngTemplateOutlet="navItem; context: { item: item }">
+    </ng-container>
   </li>
 </ul>
+
+<ng-template #navItem let-item="item">
+  <mat-icon [svgIcon]="item.icon"></mat-icon>
+  <span>{{ item.label }}</span>
+</ng-template>

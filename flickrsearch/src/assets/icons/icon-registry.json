@@ -1,9 +1,14 @@
 {
   "iconRegistry": [
     {
+      "namespace": "brand",
+      "icons": {
+        "FLICKR": "brand/flickr"
+      }
+    },
+    {
       "namespace": "navigation",
       "icons": {
-        "FLICKR": "nav/flickr",
         "NEWS": "nav/news",
         "SEARCH": "nav/search",
         "TWITTER": "nav/twitter",

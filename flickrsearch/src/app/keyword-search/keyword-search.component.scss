@@ -1,0 +1,28 @@
+@import '_constants';
+
+:host {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+form {
+  display: block;
+  max-width: 450px;
+}
+
+mat-form-field {
+  color: $body-font-color;
+  margin-right: 1rem;
+  width: 350px;
+  input {
+    color: $body-font-color;
+    font-family: $body-font-face;
+    margin-right: 1rem;
+    width: 40%;
+  }
+}
+
+button {
+
+}
