@@ -1,0 +1,14 @@
+{
+  "iconRegistry": [
+    {
+      "namespace": "navigation",
+      "icons": {
+        "FLICKR": "nav/flickr",
+        "NEWS": "nav/news",
+        "SEARCH": "nav/search",
+        "TWITTER": "nav/twitter",
+        "WEATHER": "nav/weather"
+      }
+    }
+  ]
+}
