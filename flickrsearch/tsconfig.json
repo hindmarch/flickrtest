@@ -9,10 +9,10 @@
     "moduleResolution": "node",
     "paths": {
       "@app/*": [
-        "app/*"
+        "src/app/*"
       ],
       "@environment": [
-        "environments/environment"
+        "src/environments/environment"
       ]
     },
     "emitDecoratorMetadata": true,

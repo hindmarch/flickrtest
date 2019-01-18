@@ -6,10 +6,14 @@ import {
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { IconService } from '../icons/icon.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlickrService } from '../services/flickr/flickr.service';
 
 @NgModule({
   imports: [
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,
@@ -17,6 +21,7 @@ import { IconService } from '../icons/icon.service';
   ],
   exports: [
     MatFormFieldModule,
+    FormsModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,
@@ -30,7 +35,8 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        IconService
+        IconService,
+        FlickrService
       ]
     };
   }

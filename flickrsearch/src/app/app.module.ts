@@ -10,6 +10,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ErrorComponent } from './error/error.component';
 import { KeywordSearchComponent } from './keyword-search/keyword-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     KeywordSearchComponent,
     LayoutComponent,
     NavigationComponent,
-    ErrorComponent
+    ErrorComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

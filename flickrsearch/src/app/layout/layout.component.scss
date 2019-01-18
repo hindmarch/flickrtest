@@ -39,3 +39,17 @@ article {
   display: block;
   margin: 4rem 0 0 0rem;
 }
+
+/* Results */
+section {
+  background: blue;
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  top: -70%;
+  transition: 0.5s ease-in;
+
+  &.active {
+    top: 0;
+  }
+}

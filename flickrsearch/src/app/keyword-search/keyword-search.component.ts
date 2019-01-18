@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { FlickrService } from '@app/services/flickr/flickr.service';
 
 @Component({
   selector: 'app-keyword-search',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KeywordSearchComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('queryField') queryField: NgModel;
+  public query: string;
 
-  ngOnInit() {
+  constructor(
+    private _flickrService: FlickrService
+  ) { }
+
+  ngOnInit() {}
+
+  search() {
+    this._flickrService.search(this.query);
   }
 
 }

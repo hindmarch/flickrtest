@@ -1,11 +1,15 @@
 <form>
   <mat-form-field>
     <input
+      [(ngModel)]="query"
+      name="query"
+      #queryField
       matInput
       placeholder="Flickr Search">
   </mat-form-field>
   <button
     mat-raised-button
+    (click)="search()"
     color="primary">
     Search
   </button>
