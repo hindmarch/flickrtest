@@ -12,11 +12,10 @@
 
 /* Results */
 section {
-  height: 70%;
+  height: 500px;
   left: 5%;
-  min-height: calc(400px + 1rem);
   position: absolute;
-  top: calc(-70% + 4rem);
+  top: calc(-500px + 4rem);
   transition: 0.5s ease-in;
   width: 90%;
   z-index: 2;
