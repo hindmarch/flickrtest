@@ -4,10 +4,12 @@ This is a test project using the Flickr API to display results related to specif
 ## Installation
 To install, follow the follwing steps.
 
-1. Clone this repo: `git clone git@github.com:hindmarch/flickrtest.git`
-2. From the repo root folder type: `npm install`
-3. Create the `.env` file (use the file provided separately, or type `cp default.env env`)
-4. Start the server: `npm start`
+1. Make sure you have npm and Node (>8.9) installed
+2. Clone this repo: `git clone https://github.com/hindmarch/flickrtest.git`
+3. Get into the project folder: `cd flickrtest`
+3. From the repo root folder type: `npm i`
+4. Create the `.env` file in the project root (use the file provided separately, or type `cp default.env env`)
+5. Start the server: `npm start`
 
 ## Features
 * Flickr keyword search
