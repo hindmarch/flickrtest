@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { IconService } from '../icons/icon.service';
 import { NavigationItem, NavigationItemReference } from './navigation-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +18,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     {
       ref: NavigationItemReference.SEARCH,
       icon: 'navigation:SEARCH',
-      label: 'Search by keyword'
+      label: 'Search by keyword',
+      active: true
     },
     {
       ref: NavigationItemReference.TWITTER,
@@ -37,7 +39,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
-    private _iconService: IconService
+    private _iconService: IconService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -54,7 +57,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(ref: NavigationItemReference) {
-    console.log('going to ', ref);
+    this.navigationItemList.map(item => item.active = item.ref === ref);
+    this._router.navigate([ref]);
   }
 
 }

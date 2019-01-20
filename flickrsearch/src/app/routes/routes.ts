@@ -1,6 +1,9 @@
 import { ErrorComponent } from '../error/error.component';
 import { LayoutComponent } from '../layout/layout.component';
 import { KeywordSearchComponent } from '../keyword-search/keyword-search.component';
+import { TwitterComponent } from '@app/twitter/twitter.component';
+import { WeatherComponent } from '@app/weather/weather.component';
+import { NewsComponent } from '@app/news/news.component';
 
 export const routes = [
 
@@ -21,6 +24,18 @@ export const routes = [
       {
         path: '',
         component: KeywordSearchComponent
+      },
+      {
+        path: 'twitter',
+        component: TwitterComponent
+      },
+      {
+        path: 'weather',
+        component: WeatherComponent
+      },
+      {
+        path: 'news',
+        component: NewsComponent
       }
     ]
   },

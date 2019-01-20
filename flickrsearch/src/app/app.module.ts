@@ -12,6 +12,9 @@ import { KeywordSearchComponent } from './keyword-search/keyword-search.componen
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ResultsComponent } from './results/results.component';
 import { FlickrFinderInterceptor } from './services/interceptor/http-interceptor';
+import { TwitterComponent } from './twitter/twitter.component';
+import { WeatherComponent } from './weather/weather.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FlickrFinderInterceptor } from './services/interceptor/http-interceptor
     LayoutComponent,
     NavigationComponent,
     ErrorComponent,
-    ResultsComponent
+    ResultsComponent,
+    TwitterComponent,
+    WeatherComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

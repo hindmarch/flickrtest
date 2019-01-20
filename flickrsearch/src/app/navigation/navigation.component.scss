@@ -2,7 +2,6 @@
 
 :host {
   display: block;
-  padding: 1rem;
 }
 
 ul {
@@ -11,10 +10,17 @@ ul {
 
 li {
   align-items: center;
+  cursor: pointer;
   display: flex;
   font-family: $body-font-face;
   list-style: none;
   margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+
+  &.active {
+    background: #fff;
+    color: $body-font-color-dark;
+  }
 }
 
 mat-icon {

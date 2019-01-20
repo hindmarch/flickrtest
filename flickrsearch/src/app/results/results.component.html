@@ -55,11 +55,11 @@
     </h3>
     <h4>by {{ largePhoto.user.realname || largePhoto.user.username }}, {{ largePhoto.datetaken | date }}</h4>
     <div class="tags">
-      <mat-chip-list>
-          <mat-chip
-            *ngFor="let tag of largePhoto.tags"
-            (click)="searchForTag(tag._content)">{{ tag._content }}</mat-chip>
-        </mat-chip-list>
+      <mat-chip-list class="align-right">
+        <mat-chip
+          *ngFor="let tag of largePhoto.tags"
+          (click)="searchForTag(tag._content)">{{ tag._content }}</mat-chip>
+      </mat-chip-list>
     </div>
   </div>
 </section>

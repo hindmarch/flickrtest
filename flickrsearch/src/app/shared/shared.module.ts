@@ -11,6 +11,9 @@ import { FlickrService } from '../services/flickr/flickr.service';
 
 import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { InterceptorService } from '@app/services/interceptor/interceptor.service';
+import { TwitterService } from '@app/services/twitter/twitter.service';
+import { WeatherService } from '@app/services/weather/weather.service';
+import { NewsService } from '@app/services/news/news.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -55,6 +58,9 @@ export class SharedModule {
         IconService,
         InterceptorService,
         FlickrService,
+        TwitterService,
+        WeatherService,
+        NewsService,
         {
           provide: PERFECT_SCROLLBAR_CONFIG,
           useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

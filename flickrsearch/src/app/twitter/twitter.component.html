@@ -1,0 +1,20 @@
+<article *ngIf="trends">
+  <perfect-scrollbar
+    [usePSClass]
+    [autoPropagation]>
+    <h2>
+      Trending tags for {{ trendLocation }}
+    </h2>
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let trend of trends"
+        (click)="searchForTrend(trend)">
+        {{ trend.name }}
+        <span
+          *ngIf="trend.tweet_volume">
+          ({{ trend.tweet_volume | number }} tweets)
+        </span>
+      </mat-chip>
+    </mat-chip-list>
+  </perfect-scrollbar>
+</article>

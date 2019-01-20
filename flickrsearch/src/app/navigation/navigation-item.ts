@@ -6,8 +6,8 @@ export interface NavigationItem {
 }
 
 export enum NavigationItemReference {
-  SEARCH,
-  TWITTER,
-  WEATHER,
-  NEWS
+  SEARCH = '',
+  TWITTER = 'twitter',
+  WEATHER = 'weather',
+  NEWS = 'news'
 }
