@@ -27,9 +27,9 @@
     "express": "^4.16.4",
     "flickr-sdk": "^3.8.0",
     "ngx-perfect-scrollbar": "^7.2.0",
+    "openweather-apis": "^3.3.5",
     "rxjs": "~6.3.3",
     "twitter": "^1.7.1",
-    "yahoo-weather": "^2.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

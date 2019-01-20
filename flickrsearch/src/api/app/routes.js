@@ -5,6 +5,7 @@
 const url = require('url');
 const FlickrActions = require('./flickr-search');
 const TwitterActions = require('./twitter');
+const WeatherActions = require('./weather');
 
 module.exports = function(app, db) {
 
@@ -38,5 +39,12 @@ module.exports = function(app, db) {
     TwitterActions.trendingInIreland()
     .then(trending => res.status(200).send(trending))
     .catch(trendingError => res.status(500).send(trendingError));
+  });
+
+  // Get the weather for Dublin
+  app.get('/weather/dublin', (req, res) => {
+    WeatherActions.dublinWeather()
+    .then(weather => res.status(200).send(weather))
+    .catch(weatherError => res.status(500).send(weatherError));
   });
 };

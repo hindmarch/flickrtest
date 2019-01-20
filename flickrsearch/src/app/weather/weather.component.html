@@ -1,3 +1,5 @@
-<p>
-  weather works!
-</p>
+<article *ngIf="description" (click)="getPhotosForWeather()">
+  <h1>Current Weather in Dublin</h1>
+  <h2>{{ description }}</h2>
+  <h3> {{ temperatureC }}&#8451;</h3>
+</article>
