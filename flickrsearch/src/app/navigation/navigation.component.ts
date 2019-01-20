@@ -49,6 +49,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
       // the template that it can now try and show the icons
       if (loaded) { this.iconsAvailable = true; }
     });
+
+    // Get the current route
+    const currentRoute = this._router.url.replace(/[\W]/, '');
+    this.navigationItemList.map(item => item.active = item.ref === currentRoute);
   }
 
   ngOnDestroy() {

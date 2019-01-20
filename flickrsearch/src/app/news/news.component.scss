@@ -1,0 +1,35 @@
+@import '_constants';
+
+:host {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+article {
+  background: rgba($body-bg-color, 0.8);
+  display: block;
+  height: 400px;
+  width: 550px;
+}
+
+perfect-scrollbar {
+  height: 400px;
+  width: 550px;
+}
+
+h2 {
+  padding: 0 2rem;
+}
+
+mat-chip-list {
+  display: block;
+  padding: 2rem;
+  width: 480px;
+}
+
+mat-chip span {
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}

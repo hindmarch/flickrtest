@@ -1,7 +1,11 @@
 <ul class="menu" *ngIf="iconsAvailable">
   <li
-    *ngFor="let item of navigationItemList"
+    *ngFor="let item of navigationItemList; let i = index"
+
     (click)="navigateTo(item.ref)"
+    role="button"
+    (keydown.enter)="navigateTo(item.ref)"
+    [tabindex]="i + 1"
     [class.active]="item.active">
     <ng-container
       *ngTemplateOutlet="navItem; context: { item: item }">

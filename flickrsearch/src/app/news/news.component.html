@@ -1,3 +1,16 @@
-<p>
-  news works!
-</p>
+<article *ngIf="keywords">
+    <perfect-scrollbar
+      [usePSClass]
+      [autoPropagation]>
+      <h2>
+        Keywords from current Irish news stories
+      </h2>
+      <mat-chip-list>
+        <mat-chip
+          *ngFor="let keyword of keywords"
+          (click)="searchForKeyword(keyword)">
+          {{ keyword.word }}
+          </mat-chip>
+      </mat-chip-list>
+    </perfect-scrollbar>
+  </article>
