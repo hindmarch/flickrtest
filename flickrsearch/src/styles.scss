@@ -9,6 +9,9 @@
 /* Custom Material theme */
 @import '_material-theme';
 
+/* Overrides */
+@import '_material-override';
+
 /* Basic layout. This could be a full CSS reset in a full version */
 body {
   background: $body-bg-color;

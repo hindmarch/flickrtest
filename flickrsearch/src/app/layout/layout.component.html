@@ -1,14 +1,34 @@
-<!-- our results page (swings in and out as needed)-->
+<div
+  *ngIf="backgroundPhoto"
+  class="background-photo"
+  [style.background-image]="backgroundPhoto">
+</div>
+
+<!-- our results page (swings in and out as needed) and overlay (makes bg darker) -->
+<div
+  class="overlay"
+  [class.active]="displayResults"
+  (click)="hideResults()">
+</div>
 <section [class.active]="displayResults">
   <app-results></app-results>
-</section>
+  <header>
+    <h1 *ngIf="iconsAvailable">
+      <mat-progress-spinner
+        *ngIf="loading; else flickrIcon"
+        mode="indeterminate"
+        diameter="25"
+        color="primary">
+      </mat-progress-spinner>
 
-<header>
-  <h1 *ngIf="iconsAvailable">
-    <mat-icon svgIcon="brand:FLICKR"></mat-icon>
-    <span>Flickr Finder</span>
-  </h1>
-</header>
+      <ng-template #flickrIcon>
+        <mat-icon svgIcon="brand:FLICKR"></mat-icon>
+      </ng-template>
+
+      <span>Flickr Finder</span>
+    </h1>
+  </header>
+</section>
 <aside>
   <!-- side nav -->
   <app-navigation></app-navigation>

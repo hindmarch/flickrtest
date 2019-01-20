@@ -1,3 +1,65 @@
-<p>
-  results works!
-</p>
+<!-- Search results -->
+<article>
+  <perfect-scrollbar
+    *ngIf="photos$ | async as photos"
+    [usePSClass]
+    [autoPropagation]
+    (psYReachEnd)="photos.length && loadMoreImages()">
+    <mat-grid-list
+      cols="5"
+      rowHeight="100px"
+      colWidth="100px"
+      gutterSize="8">
+      <mat-grid-tile
+        *ngFor="let photo of photos"
+        (click)="showFullSizePhoto(photo.photo)">
+        <img
+          class="thumbnail"
+          [src]="photo.url">
+      </mat-grid-tile>
+    </mat-grid-list>
+  </perfect-scrollbar>
+
+  <mat-icon
+    class="close-results"
+    (click)="hideSearchResults()">
+    close
+  </mat-icon>
+
+  <summary
+    *ngIf="search$ | async as search"
+    class="search-info">
+    <h2>
+      {{ search.query.query }}
+    </h2>
+    <h3>{{ search.results.photos.total | number }} matches</h3>
+  </summary>
+</article>
+
+<!-- The display for the large photo -->
+<section
+  *ngIf="largePhoto"
+  class="photo"
+  [style.background-image]="largePhoto.url">
+  <mat-icon
+    class="close-photo"
+    (click)="hideFullSizePhoto()">
+    close
+  </mat-icon>
+  <div class="photo-info">
+    <h3>
+      <a [href]="largePhoto.link" target="_blank">
+        <mat-icon>link</mat-icon>
+        <span>{{ largePhoto.photo.title }}</span>
+      </a>
+    </h3>
+    <h4>by {{ largePhoto.user.realname || largePhoto.user.username }}, {{ largePhoto.datetaken | date }}</h4>
+    <div class="tags">
+      <mat-chip-list>
+          <mat-chip
+            *ngFor="let tag of largePhoto.tags"
+            (click)="searchForTag(tag._content)">{{ tag._content }}</mat-chip>
+        </mat-chip-list>
+    </div>
+  </div>
+</section>

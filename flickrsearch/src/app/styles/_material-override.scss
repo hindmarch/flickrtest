@@ -1,0 +1,11 @@
+/**
+Some Material components are a bit inflexible and require a small override in CSS
+to make up for the lack of controls exposed by the component. This isn't great,
+since these overrides can break between releases. However, this is just a demo so
+I'm going to go ahead and use them here
+*/
+
+// Used in the results tag display, makes tag list align to the right
+.mat-chip-list-wrapper {
+  justify-content: flex-end;
+}

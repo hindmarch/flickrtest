@@ -3,6 +3,7 @@ import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { FlickrSearchResult } from '../flickr/flickr-response';
 import { NavigationItemReference } from '@app/navigation/navigation-item';
 import { FlickrRequest } from '../flickr/flickr-request';
+import { FlickrSearch } from './flickr-search';
 
 /**
  * The results service does 2 things:
@@ -15,17 +16,13 @@ import { FlickrRequest } from '../flickr/flickr-request';
 })
 export class ResultsService {
 
-  // Contains the results (from the Flickr service)
-  private _results: Subject<FlickrSearchResult> = new Subject();
-  public results$: Observable<FlickrSearchResult> = this._results.asObservable();
-
-  // Contains information about the originating query that generated the results
-  private _query: Subject<FlickrRequest> = new Subject();
-  public query$: Observable<FlickrRequest> = this._query.asObservable();
+  // Contains the search (from the Flickr service)
+  private _search: Subject<FlickrSearch> = new Subject();
+  public search$: Observable<FlickrSearch> = this._search.asObservable();
 
   // Show/hide the component
-  private _resultDisplayed: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  public resultDisplayed$: Observable<boolean> = this._resultDisplayed.asObservable();
+  private _resultsDisplayed: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public resultsDisplayed$: Observable<boolean> = this._resultsDisplayed.asObservable();
 
   constructor() { }
 
@@ -35,8 +32,11 @@ export class ResultsService {
    * @param query The originating query
    */
   display(results: FlickrSearchResult, query: FlickrRequest) {
-    this._results.next(results);
-    this._query.next(query);
-    this._resultDisplayed.next(true);
+    this._search.next(<FlickrSearch> { query, results });
+    this._resultsDisplayed.next(true);
+  }
+
+  hide() {
+    this._resultsDisplayed.next(false);
   }
 }

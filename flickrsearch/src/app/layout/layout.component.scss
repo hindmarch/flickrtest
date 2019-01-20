@@ -1,14 +1,36 @@
 @import 'constants';
 
-:host {
-  margin: 0;
+.background-photo {
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Results */
+section {
+  width: 90%;
+  height: 70%;
+  left: 5%;
+  position: absolute;
+  top: calc(-70% + 4rem);
+  transition: 0.5s ease-in;
+  z-index: 2;
+
+  &.active {
+    top: 0;
+  }
 }
 
 header {
+  bottom: 1rem;
   display: flex;
+  height: 3rem;
   justify-content: center;
   position: absolute;
-  top: 0;
   width: 100%;
 
   h1 {
@@ -19,11 +41,15 @@ header {
     display: flex;
     font-family: $header-font-face;
     font-size: $header-font-size;
-    padding: 0 2rem 0.5rem;
+    height: 100%;
     margin: 0;
+    padding: 0 2rem 0.5rem;
 
-    mat-icon {
+    mat-icon,
+    mat-progress-spinner {
       margin-right: 0.5rem;
+      height: 25px;
+      width: 25px;
     }
   }
 }
@@ -40,14 +66,16 @@ article {
   margin: 4rem 0 0 0rem;
 }
 
-/* Results */
-section {
-  background: blue;
-  width: 90%;
-  height: 70%;
-  position: absolute;
-  top: -70%;
-  transition: 0.5s ease-in;
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: -100%;
+  transition: 0.3s ease-out;
+  width: 100%;
+  z-index: 1;
 
   &.active {
     top: 0;

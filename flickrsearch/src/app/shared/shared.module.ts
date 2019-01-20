@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import {
-  MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule
+  MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatProgressSpinnerModule, MatListModule, MatChipsModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
@@ -9,22 +9,39 @@ import { IconService } from '../icons/icon.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlickrService } from '../services/flickr/flickr.service';
 
+import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { InterceptorService } from '@app/services/interceptor/interceptor.service';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 @NgModule({
   imports: [
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatChipsModule,
+    MatGridListModule,
     MatIconModule,
+    MatListModule,
     MatInputModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    PerfectScrollbarModule,
     RouterModule
   ],
   exports: [
     MatFormFieldModule,
     FormsModule,
+    MatChipsModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    PerfectScrollbarModule,
     RouterModule
   ]
 })
@@ -36,7 +53,12 @@ export class SharedModule {
       ngModule: SharedModule,
       providers: [
         IconService,
-        FlickrService
+        InterceptorService,
+        FlickrService,
+        {
+          provide: PERFECT_SCROLLBAR_CONFIG,
+          useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        }
       ]
     };
   }

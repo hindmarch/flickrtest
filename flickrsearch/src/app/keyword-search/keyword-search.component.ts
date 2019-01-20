@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { FlickrService } from '@app/services/flickr/flickr.service';
+import { ResultsService } from '@app/services/results/results.service';
 
 @Component({
   selector: 'app-keyword-search',
@@ -13,13 +14,16 @@ export class KeywordSearchComponent implements OnInit {
   public query: string;
 
   constructor(
-    private _flickrService: FlickrService
+    private _flickrService: FlickrService,
+    private _resultService: ResultsService
   ) { }
 
   ngOnInit() {}
 
   search() {
-    this._flickrService.search(this.query);
+    this._flickrService.searchPhotos(this.query).subscribe(results => {
+      this._resultService.display(results, {query: this.query, page: 1});
+    });
   }
 
 }

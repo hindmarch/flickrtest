@@ -7,8 +7,10 @@
 }
 
 form {
+  background: rgba($body-bg-color, 0.8);
   display: block;
   max-width: 450px;
+  padding: 2rem;
 }
 
 mat-form-field {
