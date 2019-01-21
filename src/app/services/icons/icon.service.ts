@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class IconService {
 
   private _icons;
-  private _iconPath = '/assets/icons/';
+  private _iconPath = '/assets/icons';
 
   // Provides an emitter when the icons are available (templates will not display
   // properly until the icons are loaded)
@@ -36,7 +36,7 @@ export class IconService {
         for (const icon in namespaceObject.icons) {
           if (icon) {
             const url = namespaceObject.icons[icon];
-            this.registerSvgIcon(namespace, icon, this._iconPath + url + '.svg');
+            this.registerSvgIcon(namespace, icon, `${this._iconPath}/${url}.svg`);
           }
         }
       });
