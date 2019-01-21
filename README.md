@@ -6,10 +6,12 @@ To install, follow the follwing steps.
 
 1. Make sure you have npm and Node (>8.9) installed
 2. Clone this repo: `git clone https://github.com/hindmarch/flickrtest.git`
-3. Get into the project folder: `cd flickrtest`
-3. From the repo root folder type: `npm i`
-4. Create the `.env` file in the project root (use the file provided separately, or type `cp default.env env`)
-5. Start the server: `npm start`
+3. Traverse into the project folder: `cd flickrtest`
+4. Install dependencies: `npm i`
+5. Create the `.env` file in the project root (use the file provided separately, or type `cp default.env env`)
+6. Start the server: `npm start`
+7. Wait for the NodeJS server and Angular app to start up (look for `｢wdm｣: Compiled successfully.`)
+8. Open the app at http://localhost:4200
 
 ## Features
 * Flickr keyword search
@@ -51,3 +53,14 @@ The NodeJS API is straight forward.
 The `server.js` is launched, which then reads in the API keys in `.env` and then loads `routes.js`, which allows the API to respond to the endpoints.
 
 All requests for data from the Angular app are sent to the NodeJS API.
+
+## Future work
+If this app were developed further, work would include:
+* Unit tests
+* Error handling
+* Responsive layout
+* API configuration reporting (i.e. API has an endpoint `/capabilities` that reports on missing API keys and if there are problems connecting to any of the third party APIs)
+* Spotify chart photos: a further integration might be to use the Spotify API to pull chart data and find photos for the returned artists
+* Expand on the meta data displayed next to the Flickr search results
+* Display in some form the news articles that the news keywords were created from to provide some context to the displayed keywords
+* Animate transitions with Angular's own animation library instead of simple CSS to allow events to be triggered upon animation completion
