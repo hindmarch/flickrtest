@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { IconService } from '../icons/icon.service';
+import { IconService } from '@app/services/icons/icon.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ResultsService } from '@app/services/results/results.service';

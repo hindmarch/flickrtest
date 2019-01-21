@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { IconService } from '../icons/icon.service';
+import { IconService } from '@app/services/icons/icon.service';
 import { NavigationItem, NavigationItemReference } from './navigation-item';
 import { Router } from '@angular/router';
 

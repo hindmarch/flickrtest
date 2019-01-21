@@ -1,19 +1,26 @@
-import { NgModule } from '@angular/core';
-
-import {
-  MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatProgressSpinnerModule, MatListModule, MatChipsModule
-} from '@angular/material';
-import { RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { IconService } from '../icons/icon.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlickrService } from '../services/flickr/flickr.service';
-
-import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IconService } from '@app/services/icons/icon.service';
 import { InterceptorService } from '@app/services/interceptor/interceptor.service';
+import {
+  MatButtonModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule
+  } from '@angular/material';
+import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { NewsService } from '@app/services/news/news.service';
+import { NgModule } from '@angular/core';
+import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { RouterModule } from '@angular/router';
 import { TwitterService } from '@app/services/twitter/twitter.service';
 import { WeatherService } from '@app/services/weather/weather.service';
-import { NewsService } from '@app/services/news/news.service';
+
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
